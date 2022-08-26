@@ -9,13 +9,20 @@ class App extends Component{
     mystring: "hello",
   };
 
+  handleChange=()=>{
+    this.setState({
+      mystring:"fuck you"
+    })
+  }
+
   render(){
     return(
       <div className="App">
 
         <h1> Hello world</h1>
-        
+      
         <Todo mystring={this.state.mystring}/>
+        <button onClick={this.handleChange}> ! </button>
       </div>
 
     );
