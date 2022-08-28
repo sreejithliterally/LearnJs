@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 class Form extends Component {
 
     state = {
-        inputValue:"trtrtr"
+        inputValue:""
 
     }
 
@@ -14,7 +14,8 @@ class Form extends Component {
     }
     
 
-    onSubmit =()=>{
+    onSubmit =(event)=>{
+        event.preventDefault();
         console.log(this.state)
     }
   
@@ -23,8 +24,11 @@ class Form extends Component {
                 <form>
                 
                 <h2> Form component</h2>
-                <input type ="text" value={this.setState.inputValue} onChange={this.onHandleChange}></input>
-                <button type="button" onClick={this.onSubmit}>submit</button>
+                <input type ="text"
+                value={this.setState.inputValue}
+                onChange={this.onHandleChange}
+                />
+                <button  onClick={this.onSubmit}>submit</button>
                 </form>
         )
     }
