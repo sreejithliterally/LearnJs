@@ -3,14 +3,16 @@ import React, { Component } from 'react'
 class Form extends Component {
 
     state = {
-        inputValue:""
-
+        firstName:"",
+        secondName:""
+        
     }
 
     onHandleChange=(event)=>{
         this.setState({
-            inputValue: event.target.value
-        });
+        
+        [event.target.name] : event.target.value
+        })
     }
     
 
@@ -25,9 +27,19 @@ class Form extends Component {
                 
                 <h2> Form component</h2>
                 <input type ="text"
-                value={this.setState.inputValue}
+                value={this.setState.firstName}
+                name='firstName'
                 onChange={this.onHandleChange}
                 />
+
+
+                <input type ="text"
+                name='lastName'
+                value={this.setState.secondName}
+                onChange={this.onHandleChange}
+                />
+
+
                 <button  onClick={this.onSubmit}>submit</button>
                 </form>
         )
